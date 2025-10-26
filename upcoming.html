@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upcoming Exams - ACE AssessmentHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1 class="logo">ACE Assessment<span>Hub</span></h1>
+    <nav class="topnav">
+      <a href="index.html">Dashboard</a>
+      <a href="exams.html">Exams</a>
+      <a href="results.html">Results</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Upcoming Exams</h2>
+      <p>Stay updated with your upcoming assessments.</p>
+    </div>
+  </section>
+
+  <main class="cards" id="exam-list"></main>
+
+  <footer class="footer">
+    2025 ACE AssessmentHub. All rights reserved.
+  </footer>
+
+  <script>
+    const exams = [
+      { subject: "Machine Learning", date: "2025-11-02", duration: "90 min" },
+      { subject: "Operating Systems", date: "2025-11-05", duration: "120 min" },
+      { subject: "DBMS", date: "2025-11-09", duration: "90 min" }
+    ];
+
+    const container = document.getElementById('exam-list');
+    container.innerHTML = exams.map(exam => `
+      <article class="card">
+        <h3>${exam.subject}</h3>
+        <p>Date: ${exam.date} <br> Duration: ${exam.duration}</p>
+        <button>Register</button>
+      </article>
+    `).join('');
+  </script>
+</body>
+</html>
